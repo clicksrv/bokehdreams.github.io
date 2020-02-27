@@ -26,6 +26,11 @@ Primary use:
   src: url('../fonts/Poppins/Poppins-Medium.ttf'); 
 }
 
+@font-face {
+  font-family: WolfInTheCity;
+  src: url('../fonts/WolfInTheCity/Wolf-in-the-City.ttf'); 
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ RS PLUGIN ]*/
 /*---------------------------------------------*/
@@ -212,6 +217,17 @@ Primary use:
   font-family: PlayfairDisplay-BlackItalic;
   font-size: 90px;
   color: #333;
+  line-height: 1.1;
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Logo ]*/
+.logo {
+  font-family: WolfInTheCity;
+  font-size: 65px;
+  color: #434343;
   line-height: 1.1;
 }
 
