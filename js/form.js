@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", function() {
       
       function success() {
         form.reset();
+        button.setAttribute("disabled","")
         status.innerHTML = "Thank you for contacting us!";
       }
   
