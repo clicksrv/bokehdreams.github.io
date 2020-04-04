@@ -421,8 +421,8 @@
                 <form id="contact-us-form" action="https://formspree.io/mbjadolq" method="POST">
                   <div class="row form-group">
                     <div class="col-md-6 mb-3 mb-md-0">
-                      <label class="text-white" for="fname">First Name</label>
-                      <input type="text" name="first-name" id="fname" class="form-control">
+                      <label class="text-white" for="fname">First Name *</label>
+                      <input type="text" name="first-name" id="fname" class="form-control" required>
                     </div>
                     <div class="col-md-6">
                       <label class="text-white" for="lname">Last Name</label>
@@ -431,10 +431,16 @@
                   </div>
 
                   <div class="row form-group">
-
                     <div class="col-md-12">
-                      <label class="text-white" for="email">Email</label>
-                      <input type="email" name="email" id="email" class="form-control">
+                      <label class="text-white" for="email">Email *</label>
+                      <input type="email" name="email" id="email" class="form-control" required>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <label class="text-white" for="mobile">Mobile</label>
+                      <input type="mobile" name="mobile" id="mobile" class="form-control">
                     </div>
                   </div>
 
@@ -448,9 +454,9 @@
 
                   <div class="row form-group mb-5">
                     <div class="col-md-12">
-                      <label class="text-white" for="message">Message</label>
-                      <textarea name="message" id="message" cols="30" rows="7" class="form-control"
-                        placeholder="Write your notes or questions here..."></textarea>
+                      <label class="text-white" for="message">Message *</label>
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control" required
+                        placeholder="Write your message here..."></textarea>
                     </div>
                   </div>
 
@@ -504,52 +510,7 @@
 
   <script src="js/main.js"></script>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", function() {
-  
-      // get the form elements defined in your form HTML above
-      
-      var form = document.getElementById("contact-us-form");
-      var button = form.getElementById("send-msg");
-      var status = form.getElementById("form-status");
-  
-      // Success and Error functions for after the form is submitted
-      
-      function success() {
-        form.reset();
-        status.innerHTML = "Thank you for contacting us!";
-      }
-  
-      function error() {
-        status.innerHTML = "Oops! There was a problem.";
-      }
-  
-      // handle the form submission event
-  
-      form.addEventListener("submit", function(ev) {
-        ev.preventDefault();
-        var data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-      });
-    });
-    
-    // helper function for sending an AJAX request
-  
-    function ajax(method, url, data, success, error) {
-      var xhr = new XMLHttpRequest();
-      xhr.open(method, url);
-      xhr.setRequestHeader("Accept", "application/json");
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState !== XMLHttpRequest.DONE) return;
-        if (xhr.status === 200) {
-          success(xhr.response, xhr.responseType);
-        } else {
-          error(xhr.status, xhr.response, xhr.responseType);
-        }
-      };
-      xhr.send(data);
-    }
-  </script>
+  <script src="js/form.js"></script>
 
 </body>
 
